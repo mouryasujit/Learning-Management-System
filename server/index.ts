@@ -17,7 +17,7 @@ dotenv.config();
 const app: Express = express();
 
 const corsOptions = {
-  origin: "https://lmsclient-rho.vercel.app", // Allow your client origin
+  origin: "*", // Allow your client origin
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Specify allowed methods
   credentials: true, // Allow cookies if needed
 };
