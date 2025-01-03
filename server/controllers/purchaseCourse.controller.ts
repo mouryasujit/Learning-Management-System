@@ -176,7 +176,7 @@ export const getAllPurchasedCourses = async (
 ) => {
   try {
     const userId = req.id;
-    let purchasedCourse:any = await CoursePurchase.find({
+    let purchasedCourse: any = await CoursePurchase.find({
       status: "completed",
     }).populate({
       path: "courseId",
