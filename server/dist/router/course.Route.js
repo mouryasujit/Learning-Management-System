@@ -1,0 +1,24 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const isAuthenticated_1 = __importDefault(require("../middleware/isAuthenticated"));
+const Multer_1 = __importDefault(require("../utils/Multer"));
+const course_controller_1 = require("../controllers/course.controller");
+const Router = express_1.default.Router();
+Router.post("/", isAuthenticated_1.default, course_controller_1.createCourse);
+Router.get("/", isAuthenticated_1.default, course_controller_1.getCreatorCourses);
+Router.get("/search", isAuthenticated_1.default, course_controller_1.searchCourse);
+Router.get("/publishedcourses", course_controller_1.getPublishedCourses);
+Router.delete("/remove-course/:courseId", isAuthenticated_1.default, course_controller_1.removeCourse);
+Router.put("/:courseId", isAuthenticated_1.default, Multer_1.default.single("courseThumbnail"), course_controller_1.editCourse);
+Router.get("/lecture/:lectureId", isAuthenticated_1.default, course_controller_1.getLectureById);
+Router.get("/:courseId", isAuthenticated_1.default, course_controller_1.getCourseById);
+Router.post("/:courseId/lecture", isAuthenticated_1.default, course_controller_1.createLecture);
+Router.get("/:courseId/lecture", isAuthenticated_1.default, course_controller_1.getcourseLecturs);
+Router.post("/:courseId/lecture/:lectureId", isAuthenticated_1.default, course_controller_1.editLecture);
+Router.delete("/lecture/:lectureId", isAuthenticated_1.default, course_controller_1.removeLecture);
+Router.patch("/:courseId", isAuthenticated_1.default, course_controller_1.toggleCoursePublish);
+exports.default = Router;

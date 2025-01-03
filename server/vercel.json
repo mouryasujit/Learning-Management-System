@@ -1,9 +1,15 @@
 {
   "version": 2,
-  "rewrites": [
+  "builds": [
+    {
+      "src": "./index.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
     {
       "source": "/(.*)",
-      "destination": "server/index.js",
+      "destination": "./dist/index.js",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Credentials": "true",
