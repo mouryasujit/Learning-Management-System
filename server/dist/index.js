@@ -55,14 +55,14 @@ const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/your-app";
     }
 }))();
 //apis definition
-app.use("/", (req, res) => {
-    res.status(200).send("Server is running!");
-});
 app.use("/api/v1/media", media_route_1.default);
 app.use("/api/v1/user", user_Route_1.default);
 app.use("/api/v1/course", course_Route_1.default);
 app.use("/api/v1/purchase", purchaseCourse_route_1.default);
 app.use("/api/v1/progress", couresProgress_route_1.default);
+app.use("/", (req, res) => {
+    res.status(200).send("Server is running!");
+});
 app.use((err, req, res, next) => {
     console.log("inside index.js", err.stack);
     const statusCode = err.statusCode || 500;
