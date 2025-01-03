@@ -16,12 +16,13 @@ dotenv.config();
 
 const app: Express = express();
 
-app.use(
-  cors({
-    origin: "https://lmsclient-rho.vercel.app/",
-    credentials: true,
-  })
-);
+const corsOptions = {
+  origin: "https://lmsclient-rho.vercel.app", // Allow your client origin
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Specify allowed methods
+  credentials: true, // Allow cookies if needed
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieparser());
 app.use(express.urlencoded({ extended: true }));
