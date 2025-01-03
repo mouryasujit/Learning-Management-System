@@ -18,7 +18,7 @@ const app: Express = express();
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://lmsclient-rho.vercel.app/",
     credentials: true,
   })
 );
@@ -41,8 +41,8 @@ const uri: string =
 app.use("/api/v1/media", mediaRoute);
 app.use("/api/v1/user", UserRoute);
 app.use("/api/v1/course", courseRoute);
-app.use("/api/v1/purchase",purchaseRoute);
-app.use("/api/v1/progress",courseProgressRouter);
+app.use("/api/v1/purchase", purchaseRoute);
+app.use("/api/v1/progress", courseProgressRouter);
 
 app.use((err: customError, req: Request, res: Response, next: NextFunction) => {
   console.log("inside index.js", err.stack);
