@@ -23,7 +23,7 @@ const generateToken = (res, user, message) => __awaiter(void 0, void 0, void 0, 
         .status(200)
         .cookie("token", token, {
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "none",
         maxAge: 24 * 60 * 60 * 1000,
     })
         .json({
