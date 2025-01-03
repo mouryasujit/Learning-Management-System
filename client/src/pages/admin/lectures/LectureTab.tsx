@@ -55,7 +55,7 @@ const LectureTab = () => {
         setbtnDisable(true);
         try {
           const res = await axios.post(
-            "https://learning-management-system-o8hqfp329-mouryasujits-projects.vercel.app/api/v1/media/uploads-video",
+            "https://learning-management-system-ochre.vercel.app/api/v1/media/uploads-video",
             formdata,
             {
               onUploadProgress: ({ loaded, total }) => {
