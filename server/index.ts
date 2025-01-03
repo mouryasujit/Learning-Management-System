@@ -69,8 +69,8 @@ app.use((err: customError, req: Request, res: Response, next: NextFunction) => {
 });
 const PORT: string | number = process.env.PORT || 3000;
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running on PORT: ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running on PORT: ${PORT}`);
+});
 
-export default app;
+// export default app;
