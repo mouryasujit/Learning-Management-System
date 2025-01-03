@@ -1,0 +1,11 @@
+client/node_modules
+server/node_modules
+# Environment files in client and server
+client/.env
+server/.env
+
+# OS-specific files
+.DS_Store
+
+# Log files
+*.log
