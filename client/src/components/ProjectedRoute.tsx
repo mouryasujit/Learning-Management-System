@@ -32,6 +32,7 @@ export const AdminRoute = ({ children }: { children: ReactNode }) => {
     user?.user?.user?.role !== "instructor" ||
     user?.user?.payload?.role !== "instructor"
   ) {
+    console.log(user?.user?.user?.role, user?.user?.payload?.role);
     return <Navigate to="/" />;
   }
 

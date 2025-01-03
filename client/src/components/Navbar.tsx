@@ -93,7 +93,7 @@ const Navbar = () => {
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 {(user?.user?.user?.role === "instructor" ||
-                  user?.user?.payload?.role) && (
+                  user?.user?.payload?.role ==="instructor") && (
                   <>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>
@@ -153,7 +153,7 @@ const MobileNavbar = ({ user }: any) => {
           <DarkMode />
         </SheetHeader>
         <Separator className="mr-2" />
-        {(user?.user?.user?.name !== undefined || user?.user?.payload?.name)? (
+        {(user?.user?.user?.name !== undefined || user?.user?.payload?.name !==undefined)? (
           <nav className="flex flex-col space-y-4">
             <Link to="my-learnings">My learning</Link>
             <Link to="profile">My Profile</Link>
@@ -165,7 +165,7 @@ const MobileNavbar = ({ user }: any) => {
           </Button>
         )}
         {(user?.user?.user?.role === "instructor" ||
-          user?.user?.payload?.role) && (
+          user?.user?.payload?.role==="instructor") && (
           <SheetFooter>
             <SheetClose className="flex flex-col space-y-4 w-full">
               <Button
