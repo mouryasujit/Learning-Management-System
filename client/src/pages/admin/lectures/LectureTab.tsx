@@ -55,7 +55,7 @@ const LectureTab = () => {
         setbtnDisable(true);
         try {
           const res = await axios.post(
-            "http://localhost:3000/api/v1/media/uploads-video",
+            "https://learning-management-system-o8hqfp329-mouryasujits-projects.vercel.app/api/v1/media/uploads-video",
             formdata,
             {
               onUploadProgress: ({ loaded, total }) => {
@@ -112,7 +112,7 @@ const LectureTab = () => {
   useEffect(() => {
     if (isSuccess) {
       toast.success(data?.message);
-      navigate(`/admin/course/${courseId}/lecture`);  
+      navigate(`/admin/course/${courseId}/lecture`);
     }
     if (error) {
       if (error && "data" in error) {
