@@ -26,7 +26,7 @@ const couresProgress_route_1 = __importDefault(require("./router/couresProgress.
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
-    origin: "https://lmsclient-rho.vercel.app", // Allow this specific origin
+    origin: "https://learning-management-system-client.onrender.com", // Allow this specific origin
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: [
         "X-CSRF-Token",

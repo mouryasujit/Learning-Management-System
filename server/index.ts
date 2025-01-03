@@ -18,10 +18,7 @@ const app: Express = express();
 
 app.use(
   cors({
-    origin: [
-      "https://lmsclient-rho.vercel.app",
-      "https://learning-management-system-client.onrender.com",
-    ], // Allow this specific origin
+    origin: "https://learning-management-system-client.onrender.com", // Allow this specific origin
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: [
       "X-CSRF-Token",
