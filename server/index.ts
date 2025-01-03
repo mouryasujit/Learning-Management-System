@@ -16,13 +16,24 @@ dotenv.config();
 
 const app: Express = express();
 
-const corsOptions = {
-  origin: "https://lmsclient-rho.vercel.app", // Allow your client origin
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Specify allowed methods
-  credentials: true, // Allow cookies if needed
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://lmsclient-rho.vercel.app", // Allow this specific origin
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: [
+      "X-CSRF-Token",
+      "X-Requested-With",
+      "Accept",
+      "Accept-Version",
+      "Content-Length",
+      "Content-MD5",
+      "Content-Type",
+      "Date",
+      "X-Api-Version",
+    ],
+    credentials: true, // Allow cookies if needed
+  })
+);
 app.use(express.json());
 app.use(cookieparser());
 app.use(express.urlencoded({ extended: true }));
