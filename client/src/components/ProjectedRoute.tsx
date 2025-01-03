@@ -22,15 +22,13 @@ export const AuthenticatedUser = ({ children }: { children: ReactNode }) => {
 };
 
 export const AdminRoute = ({ children }: { children: ReactNode }) => {
-  const { user, isAuthenticated } = useSelector(
-    (store: RootState) => store.auth
-  );
-
+  const { isAuthenticated } = useSelector((store: RootState) => store.auth);
+  const user: any = useSelector((store: RootState) => store.auth);
   if (!isAuthenticated) {
     return <Navigate to="/login" />;
   }
 
-  if (user?.user?.role !== "instructor") {
+  if (user?.user?.user?.role !== "instructor") {
     return <Navigate to="/" />;
   }
 
