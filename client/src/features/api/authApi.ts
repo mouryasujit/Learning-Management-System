@@ -3,7 +3,7 @@ import { isLoggedIn, isLoggedOut } from "../authSlice";
 // import { register } from "module";
 
 const USER_API =
-  "https://learning-management-system-ochre.vercel.app/api/v1/user/";
+  "https://learning-management-system-lnbk.onrender.com/api/v1/user/";
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
