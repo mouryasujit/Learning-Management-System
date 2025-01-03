@@ -55,8 +55,8 @@ const createCheckoutSession = (req, res, next) => __awaiter(void 0, void 0, void
                 },
             ],
             mode: "payment",
-            success_url: `${process.env.FRONTEND_URL}/course-progress/${courseId}`,
-            cancel_url: `${process.env.FRONTEND_URL}/course-detail/${courseId}`,
+            success_url: `https://learning-management-system-client.onrender.com/course-progress/${courseId}`,
+            cancel_url: `https://learning-management-system-client.onrender.com//course-detail/${courseId}`,
             metadata: {
                 courseId: courseId.toString(),
                 userId: userId.toString(),
