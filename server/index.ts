@@ -50,6 +50,9 @@ const uri: string =
   }
 })();
 //apis definition
+app.use("/", (req, res) => {
+  res.status(200).send("Server is running!");
+});
 app.use("/api/v1/media", mediaRoute);
 app.use("/api/v1/user", UserRoute);
 app.use("/api/v1/course", courseRoute);
