@@ -28,7 +28,10 @@ export const AdminRoute = ({ children }: { children: ReactNode }) => {
     return <Navigate to="/login" />;
   }
 
-  if (user?.user?.user?.role !== "instructor") {
+  if (
+    user?.user?.user?.role !== "instructor" ||
+    user?.user?.payload?.role !== "instructor"
+  ) {
     return <Navigate to="/" />;
   }
 
